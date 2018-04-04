@@ -29,7 +29,7 @@ function startGame() {
 
 	numGuess = 9;
 
-	chosenword = fruitList[Math.floor(Math.random() * fruitlist.length)]
+	chosenword = fruitList[Math.floor(Math.random() * fruitList.length)]
 
 	letterInChosenword = chosenword.split('');
 

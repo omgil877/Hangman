@@ -1,0 +1,8 @@
+.jumbotron {
+	background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlRFaWoIcHTklT1F62BEDItpW0vDrTPBa8xAnHAE1C03xjSGRi);
+}
+ 
+ .jumbotron h1, h2 {
+	color: white;
+	text-align: center;
+}
