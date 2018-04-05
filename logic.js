@@ -29,12 +29,12 @@ function startGame() {
 
 	numGuess = 9;
 
-	chosenword = fruitList[Math.floor(Math.random() * fruitList.length)]
+	chosenword = fruitList[Math.floor(Math.random() * fruitList.length)];
 
-	letterInChosenword = chosenword.split('');
+	letterInChosenword = chosenword.split("");
 
 	numBlanks = letterInChosenword.length;
-ggit add
+
 	console.log(chosenword);
 
 
@@ -44,9 +44,9 @@ ggit add
 	for (var i = 0; i < numBlanks; i++) {
 		blanksAndSuccesses.push("_")
 	}
-	console.log(blanksAndSuccesses)
+	console.log(blanksAndSuccesses);
 
-	document.getElementById("guess-left").innerhtml = numGuess
+	document.getElementById("guess-left").innerhtml = numGuess;
 
 	document.getElementById("word-blanks").innerhtml = blanksAndSuccesses.join(" ");
 
@@ -58,7 +58,7 @@ function checkLetters(letter) {
 	var letterInWord = false;
 
 	for (var i=0; i < numBlanks; i++) {
-		if (chosenword(i) === letter) {
+		if (chosenword[i] === letter) {
 			letterInWord = true;
 		}
 	}
@@ -89,11 +89,11 @@ function roundComplete() {
 	document.getElementById("wrong-guesses").innerhtml = wrongGuesses.join(" ");
 
 
-	if (letterInChosenword.testring() === blanksAndSuccesses.testring()) {
+	if (letterInChosenword.tostring() === blanksAndSuccesses.tostring()) {
 		winCouter++;
 		alert("you win");
 
-		document.getElementById("win-counter").innerhtml + winCouter;
+		document.getElementById("win-counter").innerhtml + winCounter;
 
 		startGame();
 	}
@@ -101,16 +101,22 @@ function roundComplete() {
 		lossCounter++;
 		alert("You Lose");
 
-		document.getElementById("loss-counter").innerhtml = losscounter;
+		document.getElementById("loss-counter").innerhtml = lossCounter;
 
 		startGame();
 	}
 
 }
 
-
-
 startGame();
+
+document.onkeyup = function(event) {
+	var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
+	checkLetters(letterGuessed);
+	roundComplete();
+
+};
+
 
 
 
